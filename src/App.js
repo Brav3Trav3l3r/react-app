@@ -1,15 +1,22 @@
-function Avatar({person, size}) {
-  return (
-    <img
-      className="avatar"
-      src="https://i.imgur.com/1bX5QH6.jpg"
-      alt="Lin Lanying"
-      width={100}
-      height={100}
-    />
-  );
-}
+import { useState } from "react";
 
-export default function Profile() {
-  return <Avatar person={{ name: 'Lin Lanying', imageId: '1bX5QH6' }} size={100}/>;
+export default function App() {
+  const [value, setValue] = useState("hELLO");
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  return (
+    <div className=" p-4">
+      <input
+        className="border-2"
+        type="text"
+        value={value}
+        onChange={handleChange}
+      />
+
+      <h1>{value}</h1>
+    </div>
+  );
 }
